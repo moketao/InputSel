@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show quick score</title>
+    <script src="jquery-2.1.4.js"></script>
+    <script src="inputsel.js"></script>
+</head>
+<body>
+
+	<input class="ipt1"/>
+
+</body>
+<script>
+//moketao:
+//用 inputSel 初始化下拉input, 
+//参数 arr 是下拉数据, key 是数据中的关键字段名, 用于显示.
+var ipt = $('.ipt1').inputSel({
+	arr:[
+		{cusname:'aabb',creattime:43243},
+		{cusname:'bbcd',creattime:32432},
+		{cusname:'abc',creattime:32432},
+	],
+	key:'cusname'
+});
+
+
+setTimeout(function(){
+
+	ipt.val('a'); //随便写入一个值, 也可以不写.
+
+	alert('准备更新数据');
+
+	//10秒后使用 updateSel 更新下拉数据
+	ipt.updateSel([
+		{cusname:'ccc',creattime:756765},
+		{cusname:'addd',creattime:657757},
+		{cusname:'123666',creattime:657878},
+		{cusname:'aaaaa1',creattime:657757},
+		{cusname:'aaaaa2',creattime:657878},
+	])
+
+},10000)
+
+
+</script>
+</html>
